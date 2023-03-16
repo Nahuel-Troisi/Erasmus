@@ -42,16 +42,13 @@ for backup_dir in BACKUP_DIRS:
         logging.error("Backup of %s failed: %s", backup_dir, str(e))
 
 # Remove oldest backups if there are more than the maximum allowed
-backup_folders = sorted(os.listdir(BACKUP_LOCATION))
+backup_folders = sorted(os.listdir(BACKUP_LOCATION), reverse=True)
 while len(backup_folders) > MAX_BACKUPS:
-    oldest_backup_folder = backup_folders[0]
+    oldest_backup_folder = backup_folders.pop()
     oldest_backup_path = os.path.join(BACKUP_LOCATION, oldest_backup_folder)
     logging.info("Removing oldest backup %s.", oldest_backup_path)
     shutil.rmtree(oldest_backup_path)
-    backup_folders = sorted(os.listdir(BACKUP_LOCATION))
+    backup_folders = sorted(os.listdir(BACKUP_LOCATION), reverse=True)
 
-# Wait for one week before running the backup again
-    time.sleep(7 * 24 * 60 * 60)
-
-
-
+# Wait ten seconds before running the backup again
+time.sleep(10)
