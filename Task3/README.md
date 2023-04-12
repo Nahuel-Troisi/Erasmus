@@ -1,6 +1,6 @@
 <center>
 
-# BACKUP SCRIPT - PYTHON
+# CNN - PYTHON
 
 **Nahuel Ivan Troisi** <br> **2º ASIR**
 
