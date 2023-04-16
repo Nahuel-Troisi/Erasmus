@@ -6,7 +6,7 @@
 
 ## STEPS
 
-This code uses TensorFlow and Keras to create and train a convolutional neural network (CNN) model to classify images from the CIFAR-10 dataset. The following is a step-by-step explanation of what the code does:
+This code uses TensorFlow and Keras to create and train a convolutional neural network (CNN) model to classify images from the CIFAR-10 dataset. The following is a step-by-step explanation of what the code does: <br>
 Import the necessary libraries:
 
 ```python
